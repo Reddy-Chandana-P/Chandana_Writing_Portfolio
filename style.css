@@ -239,7 +239,7 @@ nav {
 /* Posts grid */
 .posts-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5px;
   background: var(--text-dim);
   border: 1.5px solid var(--text-dim);
