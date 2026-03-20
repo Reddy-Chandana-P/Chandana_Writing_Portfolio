@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chandana Polanki — Writing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <nav>
+    <span class="nav-name">Chandana Polanki</span>
+    <div class="nav-links">
+      <a href="#writing">Writing</a>
+      <a href="#about">About</a>
+      <a href="https://chndnaaaaaaa.substack.com" target="_blank" class="nav-cta">Substack ↗</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-bg-text">WORDS</div>
+      <span class="hero-tag reveal">— a CSE major obsessed with literature & life</span>
+      <h1 class="hero-title reveal">
+        <span>Writing is how</span>
+        <em>I survive</em>
+        <span>the noise.</span>
+      </h1>
+      <p class="hero-sub reveal">Essays, notes, and fragments from the in-between moments of being 21 and figuring it all out.</p>
+      <a href="#writing" class="hero-btn reveal">Read the words ↓</a>
+      <div class="hero-scroll-line"></div>
+    </div>
+    <div class="hero-right">
+      <img
+        class="hero-img"
+        src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80&fit=crop"
+        alt="A quiet moment with books and coffee"
+      />
+      <div class="hero-img-overlay"></div>
+      <span class="hero-img-caption">Photo: Unsplash</span>
+    </div>
+  </section>
+
+  <!-- Writing -->
+  <section id="writing" class="writing-section">
+    <div class="section-header reveal">
+      <span class="section-label">— the archive</span>
+      <h2>Recent Writing</h2>
+    </div>
+
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="articles">Articles</button>
+      <button class="filter-btn" data-filter="poems">Poems</button>
+      <button class="filter-btn" data-filter="rough-notes">Rough Notes</button>
+      <button class="filter-btn" data-filter="book-reviews">Book Reviews</button>
+      <button class="filter-btn" data-filter="references">References</button>
+    </div>
+
+    <div class="posts-grid" id="posts-grid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote-section">
+    <div class="quote-line reveal"></div>
+    <blockquote class="reveal">
+      <p>"No tree, it is said, can grow to heaven unless its roots reach down to hell."</p>
+      <cite>— Carl Jung</cite>
+    </blockquote>
+    <div class="quote-line reveal"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <span class="section-label">— the person</span>
+        <h2>About Chandana</h2>
+      </div>
+      <div class="about-right reveal">
+        <p>Just another CSE major obsessed with literature and life. I write about the messy, beautiful, confusing parts of being young — heartbreak, identity, grief, growth, and everything in between.</p>
+        <p>I started this because I needed somewhere to put all the feelings that didn't fit anywhere else. Turns out, other people feel them too.</p>
+        <p class="about-note">Please don't ask me about the job hunt or campus placements. I'll cry.</p>
+        <a href="https://chndnaaaaaaa.substack.com" target="_blank" class="about-btn">Subscribe on Substack ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Chandana Polanki</span>
+      <span class="footer-copy">© 2026 · All words are mine</span>
+      <a href="https://chndnaaaaaaa.substack.com" target="_blank">Substack ↗</a>
+    </div>
+  </footer>
+
+  <!-- Article Reader Modal -->
+  <div class="article-overlay" id="article-overlay">
+    <div class="article-modal">
+      <div class="article-modal-header">
+        <button class="article-close" id="article-close">← Back</button>
+        <a class="article-substack-link" id="article-substack-link" href="#" target="_blank">View on Substack ↗</a>
+      </div>
+      <div class="article-modal-body" id="article-modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
