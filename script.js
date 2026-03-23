@@ -1,31 +1,7 @@
 // ─── Posts Data ───────────────────────────────────────────────────────────────
 const POSTS = [
   {
-    slug: 'being-with-you',
-    category: 'poems',
-    title: 'Being With You',
-    subtitle: 'The quietest kind of home.',
-    date: '2026',
-    tags: ['love', 'intimacy', 'presence'],
-    cover: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=848&q=80',
-    substackUrl: 'https://chndnaaaaaaa.substack.com',
-    body: `<p>Being with you is the pause between two songs,<br>
-the kind of silence that doesn't ask to be filled.<br>
-You laugh and I forget what I was worried about,<br>
-just like that, like it was never real.</p>
-<p>I've memorised the way you hold your coffee cup,<br>
-both hands, always, like it might escape.<br>
-And the way you look out windows mid-sentence,<br>
-chasing a thought I'll never quite catch.</p>
-<p>Being with you is soft in a way I didn't know I needed,<br>
-no performance, no armour, just me.<br>
-You make ordinary hours feel worth keeping,<br>
-worth pressing between the pages of memory.</p>
-<p>I don't know what to call this thing we are,<br>
-but being with you feels like the answer<br>
-to a question I stopped asking.</p>`
-  },
-  {
+    slug: 'to-the-girls',
     category: 'poems',
     title: 'To the Girls',
     subtitle: 'A thank you would be a pint word.',
