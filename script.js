@@ -1,6 +1,20 @@
 // ─── Posts Data ───────────────────────────────────────────────────────────────
 const POSTS = [
   {
+    slug: 'varkala',
+    category: 'poems',
+    title: 'Varkala',
+    subtitle: 'The cliff, the sea, and something left behind.',
+    date: '2026',
+    tags: ['travel', 'solitude', 'peace'],
+    cover: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=848&q=80',
+    substackUrl: 'https://chndnaaaaaaa.substack.com',
+    body: `<p>Varkala kept me like a secret,<br>
+cliffs red with the weight of old monsoons.<br>
+I left something heavy in that sea,<br>
+and walked back lighter than I'd been in months.</p>`
+  },
+  {
     slug: 'to-the-girls',
     category: 'poems',
     title: 'To the Girls',
@@ -780,7 +794,7 @@ function openArticle(slug) {
       <span>${post.date}</span>
     </div>
     <div class="article-tags">${post.tags.map(t => `<span>${t}</span>`).join('')}</div>
-    <div class="article-body">${post.body}</div>
+    <div class="article-body${post.category === 'poems' ? ' poem-body' : ''}">${post.body}</div>
     <div class="article-footer">
       <p>Enjoyed this? Subscribe for more on Substack.</p>
       <a href="https://chndnaaaaaaa.substack.com" target="_blank">Subscribe ↗</a>

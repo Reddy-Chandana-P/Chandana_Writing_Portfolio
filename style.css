@@ -672,3 +672,6 @@ footer {
   .cursor, .cursor-follower { display: none; }
   body { cursor: auto; }
 }
+
+/* Italic body for poems only */
+.article-body.poem-body { font-style: italic; }
