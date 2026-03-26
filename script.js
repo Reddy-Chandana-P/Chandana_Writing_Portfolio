@@ -1,20 +1,6 @@
 // ─── Posts Data ───────────────────────────────────────────────────────────────
 const POSTS = [
   {
-    slug: 'varkala',
-    category: 'poems',
-    title: 'Varkala',
-    subtitle: 'The cliff, the sea, and something left behind.',
-    date: '2026',
-    tags: ['travel', 'solitude', 'peace'],
-    cover: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=848&q=80',
-    substackUrl: 'https://chndnaaaaaaa.substack.com',
-    body: `<p>Varkala kept me like a secret,<br>
-cliffs red with the weight of old monsoons.<br>
-I left something heavy in that sea,<br>
-and walked back lighter than I'd been in months.</p>`
-  },
-  {
     slug: 'to-the-girls',
     category: 'poems',
     title: 'To the Girls',
