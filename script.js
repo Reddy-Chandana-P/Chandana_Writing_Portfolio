@@ -1,6 +1,17 @@
 // ─── Posts Data ───────────────────────────────────────────────────────────────
 const POSTS = [
   {
+    slug: 'bhargavi',
+    category: 'articles',
+    title: 'Bhargavi',
+    subtitle: '',
+    date: '2026',
+    tags: [],
+    cover: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=848&q=80',
+    substackUrl: 'https://chndnaaaaaaa.substack.com',
+    body: ``
+  },
+  {
     slug: 'to-the-girls',
     category: 'poems',
     title: 'To the Girls',
