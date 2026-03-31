@@ -1,6 +1,17 @@
 // ─── Posts Data ───────────────────────────────────────────────────────────────
 const POSTS = [
   {
+    slug: 'a-thousand-splendid-suns',
+    category: 'book-reviews',
+    title: 'A Thousand Splendid Suns',
+    subtitle: 'Coming soon.',
+    date: '2026',
+    tags: ['book review', 'fiction', 'khaled hosseini'],
+    cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=848&q=80',
+    substackUrl: 'https://chndnaaaaaaa.substack.com',
+    body: `<p>Content coming soon.</p>`
+  },
+  {
     slug: 'to-the-girls',
     category: 'poems',
     title: 'To the Girls',
