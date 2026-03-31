@@ -905,5 +905,5 @@ window.addEventListener('scroll', () => {
 // ─── Hero Parallax ─────────────────────────────────────────────────────────────
 const heroBg = document.querySelector('.hero-bg-text');
 window.addEventListener('scroll', () => {
-  if (heroBg) h'eroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+  if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
 });
