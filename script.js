@@ -1,6 +1,28 @@
 // ─── Posts Data ───────────────────────────────────────────────────────────────
 const POSTS = [
   {
+    slug: 'the-bell-jar-experience',
+    category: 'book-reviews',
+    title: 'The Bell Jar Experience',
+    subtitle: 'The tornado of things I felt while reading the Bell Jar by Sylvia Plath.',
+    date: '2026',
+    tags: ['book review', 'fiction', 'sylvia plath'],
+    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=848&q=80',
+    substackUrl: 'https://chndnaaaaaaa.substack.com',
+    body: `<p>The tornado of things I felt while reading the Bell Jar by Sylvia Plath. It didn't take me more than 10 pages to feel relatable to the main character Esther.</p>`
+  },
+  {
+    slug: 'a-thousand-splendid-suns',
+    category: 'book-reviews',
+    title: 'The Bell Jar Experience',
+    subtitle: 'The tornado of things I felt while reading the Bell Jar by Sylvia Plath.',
+    date: '2026',
+    tags: ['book review', 'fiction', 'sylvia plath'],
+    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=848&q=80',
+    substackUrl: 'https://chndnaaaaaaa.substack.com',
+    body: `<p>The tornado of things I felt while reading the Bell Jar by Sylvia Plath. It didn't take me more than 10 pages to feel relatable to the main character Esther.</p>`
+  },
+  {
     slug: 'a-thousand-splendid-suns',
     category: 'book-reviews',
     title: 'A Thousand Splendid Suns',
@@ -883,5 +905,5 @@ window.addEventListener('scroll', () => {
 // ─── Hero Parallax ─────────────────────────────────────────────────────────────
 const heroBg = document.querySelector('.hero-bg-text');
 window.addEventListener('scroll', () => {
-  if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+  if (heroBg) h'eroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
 });
