@@ -14,17 +14,6 @@ const POSTS = [
   {
     slug: 'a-thousand-splendid-suns',
     category: 'book-reviews',
-    title: 'The Bell Jar Experience',
-    subtitle: 'The tornado of things I felt while reading the Bell Jar by Sylvia Plath.',
-    date: '2026',
-    tags: ['book review', 'fiction', 'sylvia plath'],
-    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=848&q=80',
-    substackUrl: 'https://chndnaaaaaaa.substack.com',
-    body: `<p>The tornado of things I felt while reading the Bell Jar by Sylvia Plath. It didn't take me more than 10 pages to feel relatable to the main character Esther.</p>`
-  },
-  {
-    slug: 'a-thousand-splendid-suns',
-    category: 'book-reviews',
     title: 'A Thousand Splendid Suns',
     subtitle: 'Coming soon.',
     date: '2026',
