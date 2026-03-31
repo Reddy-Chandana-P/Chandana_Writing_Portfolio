@@ -12,6 +12,17 @@ const POSTS = [
     body: `<p>Content coming soon.</p>`
   },
   {
+    slug: 'palace-of-illusions',
+    category: 'book-reviews',
+    title: 'The Palace of Illusions',
+    subtitle: 'Coming soon.',
+    date: '2026',
+    tags: ['book review', 'fiction', 'chitra banerjee divakaruni'],
+    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=848&q=80',
+    substackUrl: 'https://chndnaaaaaaa.substack.com',
+    body: `<p>Content coming soon.</p>`
+  },
+  {
     slug: 'to-the-girls',
     category: 'poems',
     title: 'To the Girls',
