@@ -754,6 +754,19 @@ Now, forgetting it feels like a gentle flame.</p>`
 ];
 
 // ─── Render Posts ──────────────────────────────────────────────────────────────
+function readingTime(body) {
+  const words = body.replace(/<[^>]+>/g, '').split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
+function categoryColor(cat) {
+  if (cat === 'poems') return 'tag-poem';
+  if (cat === 'articles') return 'tag-article';
+  if (cat === 'book-reviews') return 'tag-book';
+  if (cat === 'rough-notes') return 'tag-note';
+  return '';
+}
+
 function renderPosts(filter = 'all') {
   const grid = document.getElementById('posts-grid');
   const filtered = filter === 'all' ? POSTS : POSTS.filter(p => p.category === filter);
@@ -765,9 +778,13 @@ function renderPosts(filter = 'all') {
         ${!post.cover ? `<div class="post-img-text">${post.title.slice(0,2).toUpperCase()}</div>` : ''}
       </div>
       <div class="post-body">
-        <div class="post-tags">${post.tags.slice(0,3).map(t => `<span>${t}</span>`).join('')}</div>
+        <div class="post-tags">${post.tags.slice(0,3).map(t => `<span class="${categoryColor(post.category)}">${t}</span>`).join('')}</div>
         <h3>${post.title}</h3>
         <p>${post.subtitle}</p>
+        <div class="post-meta">
+          <span class="post-date">${post.date}</span>
+          <span class="post-reading-time">${readingTime(post.body)} min read</span>
+        </div>
         <span class="post-read">Read →</span>
       </div>
     </article>
@@ -896,3 +913,10 @@ const heroBg = document.querySelector('.hero-bg-text');
 window.addEventListener('scroll', () => {
   if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
 });
+
+// ─── Back to Top ───────────────────────────────────────────────────────────────
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+});
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
