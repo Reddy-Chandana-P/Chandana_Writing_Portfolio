@@ -753,6 +753,16 @@ Now, forgetting it feels like a gentle flame.</p>`
   }
 ];
 
+// ─── Likes ────────────────────────────────────────────────────────────────────
+function getLikes() { return JSON.parse(localStorage.getItem('liked_posts') || '[]'); }
+function isLiked(slug) { return getLikes().includes(slug); }
+function toggleLike(slug) {
+  const likes = getLikes();
+  const idx = likes.indexOf(slug);
+  if (idx === -1) likes.push(slug); else likes.splice(idx, 1);
+  localStorage.setItem('liked_posts', JSON.stringify(likes));
+}
+
 // ─── Render Posts ──────────────────────────────────────────────────────────────
 function readingTime(body) {
   const words = body.replace(/<[^>]+>/g, '').split(/\s+/).filter(Boolean).length;
@@ -769,7 +779,7 @@ function categoryColor(cat) {
 
 function renderPosts(filter = 'all') {
   const grid = document.getElementById('posts-grid');
-  const filtered = filter === 'all' ? POSTS : POSTS.filter(p => p.category === filter);
+  const filtered = filter === 'all' ? POSTS : filter === 'liked' ? POSTS.filter(p => isLiked(p.slug)) : POSTS.filter(p => p.category === filter);
 
   grid.innerHTML = filtered.map((post, i) => `
     <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}">
@@ -785,7 +795,12 @@ function renderPosts(filter = 'all') {
           <span class="post-date">${post.date}</span>
           <span class="post-reading-time">${readingTime(post.body)} min read</span>
         </div>
-        <span class="post-read">Read →</span>
+        <div class="post-footer">
+          <span class="post-read">Read →</span>
+          <button class="like-btn ${isLiked(post.slug) ? 'liked' : ''}" data-slug="${post.slug}" aria-label="Like">
+            ${isLiked(post.slug) ? '♥' : '♡'}
+          </button>
+        </div>
       </div>
     </article>
   `).join('') + `
@@ -801,10 +816,29 @@ function renderPosts(filter = 'all') {
 
   // Re-observe new cards
   grid.querySelectorAll('.post-card[data-slug]').forEach(card => {
-    card.addEventListener('click', () => openArticle(card.dataset.slug));
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.like-btn')) return;
+      openArticle(card.dataset.slug);
+    });
     observer.observe(card);
   });
   grid.querySelectorAll('.cta-card').forEach(card => observer.observe(card));
+
+  // Like buttons
+  grid.querySelectorAll('.like-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const slug = btn.dataset.slug;
+      toggleLike(slug);
+      const liked = isLiked(slug);
+      btn.classList.toggle('liked', liked);
+      btn.textContent = liked ? '♥' : '♡';
+      // if currently viewing liked filter, re-render
+      if (document.querySelector('.filter-btn.active')?.dataset.filter === 'liked') {
+        renderPosts('liked');
+      }
+    });
+  });
 }
 
 // ─── Article Reader ────────────────────────────────────────────────────────────
