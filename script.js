@@ -932,13 +932,13 @@ document.addEventListener('mousemove', e => {
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
-    nav.style.background = 'rgba(245,240,232,0.97)';
+    nav.style.background = 'var(--bg)';
     nav.style.backdropFilter = 'blur(12px)';
-    nav.style.borderBottom = '1px solid rgba(176,160,144,0.25)';
+    nav.style.borderBottom = '1px solid rgba(128,128,128,0.2)';
   } else {
-    nav.style.background = 'linear-gradient(to bottom, rgba(245,240,232,0.97) 0%, transparent 100%)';
-    nav.style.backdropFilter = 'blur(0px)';
-    nav.style.borderBottom = 'none';
+    nav.style.background = '';
+    nav.style.backdropFilter = '';
+    nav.style.borderBottom = '';
   }
 });
 
@@ -956,37 +956,39 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // ─── Theme Picker ──────────────────────────────────────────────────────────────
-const themeToggle = document.getElementById('theme-toggle');
-const themePanel  = document.getElementById('theme-panel');
-const swatches    = document.querySelectorAll('.swatch');
+(function() {
+  const toggle = document.getElementById('theme-toggle');
+  const panel  = document.getElementById('theme-panel');
+  if (!toggle || !panel) return;
 
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme === 'warm' ? '' : theme);
-  localStorage.setItem('theme', theme);
-  swatches.forEach(s => s.classList.toggle('active', s.dataset.theme === theme));
-}
+  const swatchBtns = panel.querySelectorAll('.swatch');
 
-applyTheme(localStorage.getItem('theme') || 'warm');
-
-if (themeToggle) {
-  themeToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    themePanel.classList.toggle('open');
-  });
-}
-
-swatches.forEach(s => {
-  s.addEventListener('click', (e) => {
-    e.stopPropagation();
-    applyTheme(s.dataset.theme);
-    themePanel.classList.remove('open');
-  });
-});
-
-document.addEventListener('click', (e) => {
-  if (themePanel && !themePanel.contains(e.target) && !themeToggle.contains(e.target)) {
-    themePanel.classList.remove('open');
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme === 'warm' ? '' : theme);
+    localStorage.setItem('theme', theme);
+    swatchBtns.forEach(s => s.classList.toggle('active', s.dataset.theme === theme));
   }
-});
+
+  applyTheme(localStorage.getItem('theme') || 'warm');
+
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    panel.classList.toggle('open');
+  });
+
+  swatchBtns.forEach(function(s) {
+    s.addEventListener('click', function(e) {
+      e.stopPropagation();
+      applyTheme(s.dataset.theme);
+      panel.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!panel.contains(e.target) && !toggle.contains(e.target)) {
+      panel.classList.remove('open');
+    }
+  });
+})();
 
 
