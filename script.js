@@ -966,13 +966,14 @@ function applyTheme(theme) {
   swatches.forEach(s => s.classList.toggle('active', s.dataset.theme === theme));
 }
 
-// Load saved theme
 applyTheme(localStorage.getItem('theme') || 'warm');
 
-themeToggle.addEventListener('click', (e) => {
-  e.stopPropagation();
-  themePanel.classList.toggle('open');
-});
+if (themeToggle) {
+  themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    themePanel.classList.toggle('open');
+  });
+}
 
 swatches.forEach(s => {
   s.addEventListener('click', (e) => {
@@ -983,7 +984,9 @@ swatches.forEach(s => {
 });
 
 document.addEventListener('click', (e) => {
-  if (!themePanel.contains(e.target) && !themeToggle.contains(e.target)) {
+  if (themePanel && !themePanel.contains(e.target) && !themeToggle.contains(e.target)) {
     themePanel.classList.remove('open');
   }
 });
+
+
