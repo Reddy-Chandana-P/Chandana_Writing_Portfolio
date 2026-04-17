@@ -14,6 +14,48 @@
   --radius: 4px;
 }
 
+/* ── Themes ── */
+[data-theme="dark"] {
+  --bg: #1a1714;
+  --bg2: #231f1b;
+  --bg3: #201d19;
+  --accent: #d4845a;
+  --accent2: #b5622a;
+  --text: #f0ebe3;
+  --text-muted: #a89880;
+  --text-dim: #5a5048;
+}
+[data-theme="rose"] {
+  --bg: #fdf0f0;
+  --bg2: #f7e4e4;
+  --bg3: #fff6f6;
+  --accent: #c0546a;
+  --accent2: #9e3a52;
+  --text: #2a1a1e;
+  --text-muted: #7a4a54;
+  --text-dim: #c4a0a8;
+}
+[data-theme="sage"] {
+  --bg: #f0f4f0;
+  --bg2: #e2ebe2;
+  --bg3: #f6faf6;
+  --accent: #4a7a5a;
+  --accent2: #355c44;
+  --text: #1a2a1e;
+  --text-muted: #4a6454;
+  --text-dim: #9ab4a0;
+}
+[data-theme="slate"] {
+  --bg: #1e2430;
+  --bg2: #252d3d;
+  --bg3: #222a38;
+  --accent: #7aa4d4;
+  --accent2: #5a84b4;
+  --text: #e8eef8;
+  --text-muted: #8a9ab8;
+  --text-dim: #3a4a64;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -85,6 +127,64 @@ nav {
   transition: background 0.2s, color 0.2s !important;
 }
 .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+/* Theme toggle */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--text-dim);
+  color: var(--text-muted);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Theme panel */
+.theme-panel {
+  position: fixed;
+  top: 4.5rem;
+  right: 4rem;
+  background: var(--bg3);
+  border: 1px solid var(--bg2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  z-index: 200;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.theme-panel.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+.theme-panel-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+}
+.theme-swatches {
+  display: flex;
+  gap: 0.6rem;
+}
+.swatch {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  outline: none;
+}
+.swatch:hover { transform: scale(1.2); }
+.swatch.active { border-color: var(--accent); transform: scale(1.15); }
 
 /* Hero */
 .hero {
