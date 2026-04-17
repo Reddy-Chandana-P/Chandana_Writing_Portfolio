@@ -975,14 +975,15 @@ themeToggle.addEventListener('click', (e) => {
 });
 
 swatches.forEach(s => {
-  s.addEventListener('click', () => {
+  s.addEventListener('click', (e) => {
+    e.stopPropagation();
     applyTheme(s.dataset.theme);
     themePanel.classList.remove('open');
   });
 });
 
 document.addEventListener('click', (e) => {
-  if (!themePanel.contains(e.target) && e.target !== themeToggle) {
+  if (!themePanel.contains(e.target) && !themeToggle.contains(e.target)) {
     themePanel.classList.remove('open');
   }
 });
