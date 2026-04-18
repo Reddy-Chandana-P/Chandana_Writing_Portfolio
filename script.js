@@ -886,11 +886,55 @@ overlay.addEventListener('click', e => { if (e.target === overlay) closeArticle(
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
 
 // ─── Filter Buttons ────────────────────────────────────────────────────────────
+const bookSearchBar = document.getElementById('book-search-bar');
+const bookSearchInput = document.getElementById('book-search-input');
+
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    renderPosts(btn.dataset.filter);
+    const filter = btn.dataset.filter;
+    bookSearchBar.style.display = filter === 'book-reviews' ? 'block' : 'none';
+    if (filter !== 'book-reviews') bookSearchInput.value = '';
+    renderPosts(filter);
+  });
+});
+
+bookSearchInput.addEventListener('input', () => {
+  const q = bookSearchInput.value.toLowerCase().trim();
+  const filtered = POSTS.filter(p => p.category === 'book-reviews' &&
+    (p.title.toLowerCase().includes(q) || p.tags.some(t => t.toLowerCase().includes(q))));
+  const grid = document.getElementById('posts-grid');
+  grid.innerHTML = filtered.map((post, i) => `
+    <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}">
+      <div class="post-img ${post.cover ? '' : 'no-img'}"
+        ${post.cover ? `style="background-image:url('${post.cover}')"` : ''}>
+        ${!post.cover ? `<div class="post-img-text">${post.title.slice(0,2).toUpperCase()}</div>` : ''}
+      </div>
+      <div class="post-body">
+        <div class="post-tags">${post.tags.slice(0,3).map(t => `<span class="${categoryColor(post.category)}">${t}</span>`).join('')}</div>
+        <h3>${post.title}</h3>
+        <p>${post.subtitle}</p>
+        <div class="post-meta">
+          <span class="post-date">${post.date}</span>
+          <span class="post-reading-time">${readingTime(post.body)} min read</span>
+        </div>
+        <div class="post-footer">
+          <span class="post-read">Read →</span>
+          <button class="like-btn ${isLiked(post.slug) ? 'liked' : ''}" data-slug="${post.slug}" aria-label="Like">
+            ${isLiked(post.slug) ? '♥' : '♡'}
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join('') || '<p class="no-results">No book reviews found.</p>';
+
+  grid.querySelectorAll('.post-card[data-slug]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.like-btn')) return;
+      openArticle(card.dataset.slug);
+    });
+    observer.observe(card);
   });
 });
 

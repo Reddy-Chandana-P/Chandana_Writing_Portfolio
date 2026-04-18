@@ -877,7 +877,33 @@ footer {
   100% { transform: scale(1); }
 }
 
-/* Liked filter button */
+/* Book search bar */
+.book-search-bar {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+.book-search-bar.visible { display: block; }
+.book-search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--text-dim);
+  border-radius: 2rem;
+  background: var(--bg3);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.book-search-bar input:focus { border-color: var(--accent); }
+.book-search-bar input::placeholder { color: var(--text-dim); }
+.no-results {
+  padding: 2rem;
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 0.9rem;
+}
 .filter-liked { border-color: rgba(224,90,122,0.4); color: #e05a7a; }
 .filter-liked.active { background: #e05a7a; border-color: #e05a7a; color: #fff; }
 @media (max-width: 1024px) {
