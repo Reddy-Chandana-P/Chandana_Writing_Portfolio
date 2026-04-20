@@ -380,6 +380,20 @@ nav {
   font-weight: 400;
   color: var(--text);
 }
+.post-counts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+.count-dot {
+  color: var(--text-dim);
+  opacity: 0.5;
+}
 
 /* Posts grid */
 .posts-grid {

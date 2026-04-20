@@ -945,6 +945,18 @@ window.addEventListener('scroll', () => {
   scrollProgress.style.width = (window.scrollY / total * 100) + '%';
 });
 
+// ─── Post Count Badge ──────────────────────────────────────────────────────────
+(function() {
+  const counts = {};
+  POSTS.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+  const labels = { poems: 'poems', articles: 'articles', 'book-reviews': 'book reviews', 'rough-notes': 'rough notes' };
+  const parts = Object.entries(labels)
+    .filter(([k]) => counts[k])
+    .map(([k, label]) => `<span>${counts[k]} ${label}</span>`);
+  const el = document.getElementById('post-counts');
+  if (el) el.innerHTML = parts.join('<span class="count-dot">·</span>');
+})();
+
 // ─── Scroll Reveal ─────────────────────────────────────────────────────────────
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
