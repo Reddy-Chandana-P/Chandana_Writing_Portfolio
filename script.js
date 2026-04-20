@@ -938,6 +938,13 @@ bookSearchInput.addEventListener('input', () => {
   });
 });
 
+// ─── Scroll Progress ───────────────────────────────────────────────────────────
+const scrollProgress = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.width = (window.scrollY / total * 100) + '%';
+});
+
 // ─── Scroll Reveal ─────────────────────────────────────────────────────────────
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
