@@ -782,10 +782,9 @@ function renderPosts(filter = 'all') {
   const filtered = filter === 'all' ? POSTS : filter === 'liked' ? POSTS.filter(p => isLiked(p.slug)) : POSTS.filter(p => p.category === filter);
 
   grid.innerHTML = filtered.map((post, i) => `
-    <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}">
-      <div class="post-img ${post.cover ? '' : 'no-img'}"
-        ${post.cover ? `style="background-image:url('${post.cover}')"` : ''}>
-        ${!post.cover ? `<div class="post-img-text">${post.title.slice(0,2).toUpperCase()}</div>` : ''}
+    <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
+      <div class="post-img no-img">
+        <div class="post-img-text">${post.title.slice(0,2).toUpperCase()}</div>
       </div>
       <div class="post-body">
         <div class="post-tags">${post.tags.slice(0,3).map(t => `<span class="${categoryColor(post.category)}">${t}</span>`).join('')}</div>
@@ -905,10 +904,9 @@ bookSearchInput.addEventListener('input', () => {
     (p.title.toLowerCase().includes(q) || p.tags.some(t => t.toLowerCase().includes(q))));
   const grid = document.getElementById('posts-grid');
   grid.innerHTML = filtered.map((post, i) => `
-    <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}">
-      <div class="post-img ${post.cover ? '' : 'no-img'}"
-        ${post.cover ? `style="background-image:url('${post.cover}')"` : ''}>
-        ${!post.cover ? `<div class="post-img-text">${post.title.slice(0,2).toUpperCase()}</div>` : ''}
+    <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
+      <div class="post-img no-img">
+        <div class="post-img-text">${post.title.slice(0,2).toUpperCase()}</div>
       </div>
       <div class="post-body">
         <div class="post-tags">${post.tags.slice(0,3).map(t => `<span class="${categoryColor(post.category)}">${t}</span>`).join('')}</div>

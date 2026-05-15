@@ -120,10 +120,11 @@ body {
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease, background 0.2s;
+  mix-blend-mode: difference;
 }
 .cursor-follower {
   width: 32px; height: 32px;
-  border: 1px solid rgba(181,98,42,0.35);
+  border: 1.5px solid var(--accent);
   border-radius: 50%;
   position: fixed;
   top: 0; left: 0;
