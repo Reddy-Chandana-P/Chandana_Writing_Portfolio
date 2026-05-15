@@ -111,30 +111,30 @@ body {
 
 /* Custom cursor */
 .cursor {
-  width: 8px; height: 8px;
-  background: var(--accent);
+  width: 10px; height: 10px;
+  background: #b5622a;
   border-radius: 50%;
   position: fixed;
   top: 0; left: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999;
   transform: translate(-50%, -50%);
-  transition: transform 0.1s ease, background 0.2s;
-  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+  outline: 2px solid rgba(255,255,255,0.6);
 }
 .cursor-follower {
   width: 32px; height: 32px;
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid #b5622a;
   border-radius: 50%;
   position: fixed;
   top: 0; left: 0;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 99998;
   transform: translate(-50%, -50%);
-  transition: transform 0.15s ease, width 0.2s, height 0.2s, border-color 0.2s;
+  transition: transform 0.15s ease, width 0.2s, height 0.2s;
 }
-body:has(a:hover) .cursor { background: var(--accent2); transform: translate(-50%,-50%) scale(1.5); }
-body:has(a:hover) .cursor-follower { width: 48px; height: 48px; border-color: rgba(181,98,42,0.6); }
+body:has(a:hover) .cursor { transform: translate(-50%,-50%) scale(1.5); }
+body:has(a:hover) .cursor-follower { width: 48px; height: 48px; }
 
 /* Nav */
 nav {
