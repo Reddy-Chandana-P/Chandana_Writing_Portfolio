@@ -7,7 +7,7 @@ const POSTS = [
     subtitle: 'The tornado of things I felt while reading the Bell Jar by Sylvia Plath.',
     date: '2026',
     tags: ['book review', 'fiction', 'sylvia plath'],
-    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>The tornado of things I felt while reading the Bell Jar by Sylvia Plath. It didn't take me more than 10 pages to feel relatable to the main character Esther.</p>`
   },
@@ -18,7 +18,7 @@ const POSTS = [
     subtitle: 'Coming soon.',
     date: '2026',
     tags: ['book review', 'fiction', 'khaled hosseini'],
-    cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Content coming soon.</p>`
   },
@@ -29,7 +29,7 @@ const POSTS = [
     subtitle: 'Coming soon.',
     date: '2026',
     tags: ['book review', 'fiction', 'chitra banerjee divakaruni'],
-    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Content coming soon.</p>`
   },
@@ -40,7 +40,7 @@ const POSTS = [
     subtitle: 'A thank you would be a pint word.',
     date: '2026',
     tags: ['friendship', 'gratitude', 'women'],
-    cover: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>To,<br>
 The girls who held my hair while puking but got me another shot<br>
@@ -59,7 +59,7 @@ The girls who cry their hearts out but also give me the strength needed</p>
     subtitle: 'A girl learning to love herself as she is.',
     date: '2026',
     tags: ['self love', 'identity', 'freedom'],
-    cover: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Falling in love with my wavy hair was never an option as a child,<br>
 but now I'm 21, independent enough to tame these curls,<br>
@@ -85,7 +85,7 @@ as she is.</p>`
     subtitle: 'The world belonged only to us.',
     date: '2026',
     tags: ['love', 'night', 'intimacy'],
-    cover: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>That chilly night, nineteen degrees,<br>
 we raced at eighty, far from the city.<br>
@@ -107,7 +107,7 @@ and the world belonged only to us.</p>`
     subtitle: 'Breathless, bruised, lost in your embrace.',
     date: '2026',
     tags: ['love', 'morning', 'desire'],
-    cover: 'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Early morning thrills, smoking in the balcony<br>
 Letting it warm up these misty mornings<br>
@@ -128,7 +128,7 @@ Breathless, bruised, lost in your embrace.</p>`
     subtitle: 'Is this truth, or a cunning facade?',
     date: '2026',
     tags: ['identity', 'loss', 'confusion'],
-    cover: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>You said you wanna know what's going on.<br>
 So I will tell you.<br>
@@ -173,7 +173,7 @@ As doubt carves lines upon my brow?</p>`
     subtitle: 'Your fragrance brought it back.',
     date: '2026',
     tags: ['memory', 'heartbreak', 'love and loss'],
-    cover: 'https://images.unsplash.com/photo-1541643600914-78b084683702?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>I never knew a scent could be so deep,<br>
 Reviving wounds I thought were healed,<br>
@@ -190,7 +190,7 @@ Your fragrance brought it back.</p>`
     subtitle: 'A moment solely for me.',
     date: '2026',
     tags: ['solitude', 'self', 'night'],
-    cover: 'https://images.unsplash.com/photo-1532978379173-523e16f371f9?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Sitting on the footpath,<br>
 I gazed at the full moon golden in hue<br>
@@ -213,7 +213,7 @@ A moment solely for me.</p>`
     subtitle: 'I had never felt anything like this before.',
     date: '2026',
     tags: ['heartbreak', 'self worth', 'love and loss'],
-    cover: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>How easy it was for you<br>
 to kill my excitement<br>
@@ -240,7 +240,7 @@ anything like this before.</p>`
     subtitle: 'Courage fell to its knees.',
     date: '2026',
     tags: ['letting go', 'memory', 'healing'],
-    cover: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Took me exactly 365 days to walk back into that bookstore.<br>
 Memories of us wrecked me every time I passed its doors,<br>
@@ -263,7 +263,7 @@ who wasn't you.</p>`
     subtitle: 'You only wanted a few moments with me.',
     date: '2026',
     tags: ['heartbreak', 'young adulthood', 'letting go'],
-    cover: 'https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>How silly of me to dream a new year with you,<br>
 to make a vision board with you,<br>
@@ -282,7 +282,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'about an old friend who comes n goes.',
     date: 'March 5, 2026',
     tags: ['death', 'young adulthood', 'rebirth', 'life transitions'],
-    cover: 'https://substackcdn.com/image/fetch/w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd57f688b-bb68-4199-8f39-759d3b5872e3_960x540.png',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com/p/oh-death-come-again-another-day',
     body: `<p>One fine morning, it was the usual crowd in the metro, the morning sunshine was all the same, nothing different. I felt something churn in my stomach and felt a little dizzy, so I decided to go to the nearest coffee shop. I ordered my usual (cappuccino) and sat at a table near the window, and was gazing outside, waiting for my coffee.</p>
 <p>I saw the creature that haunted me in one of my dreams a couple of years ago, a black shadow with a white mask like the ghost from Spirited Away movie. I was not shocked to see him again. I smiled at him as I recognized him. I knew him; he was called Mors (death).</p>
@@ -300,7 +300,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'a small article on the roads that lead to numbness and breakdowns at random hours.',
     date: 'March 3, 2026',
     tags: ['heartbreak', 'letting go', 'identity', 'young adulthood', 'choosing yourself'],
-    cover: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com/p/numbness-and-breakdowns',
     body: `<p>What is this feeling of standing between numbness and breakdowns called? Does it even have a name? I am standing at a junction where these two roads meet, and I cannot choose to travel both these roads at once. This double edged sword that will hurt me either way sooner or later, sharper pain or blunt, slow one. I should pick one and face the truth.</p>
 <p>When I chose the road called breakdowns, the pain was unbearable beyond what a frail human could take. I prayed to God to make me numb so I could escape from the pain. I begged him like a desperate child looking for his mother. What was all that pain for? I kept asking myself this question every day, like it's a task I needed to finish. Why did I choose to suffer a storm that wasn't in my hands to control and wasn't even meant to be mine?</p>
@@ -319,7 +319,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'A month of silence, a hundred what-ifs, and the courage to ask the questions that scared me the most.',
     date: 'February 25, 2026',
     tags: ['love and loss', 'heartbreak', 'young adulthood', 'letting go'],
-    cover: 'https://substack-post-media.s3.amazonaws.com/public/images/a6a54cf5-0fd7-45ea-892d-60db26eee9f4_1169x1280.jpeg',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com/p/breakdowns-during-office-hours',
     body: `<p><strong>I ended things with you a month ago, and yet here I am, crying in the office, ending things all over again.</strong></p>
 <p>It's quieter this time. Quieter, and somehow that quiet gave me the closure I needed to stop thinking about all the <em>what ifs</em>.</p>
@@ -343,7 +343,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'It wasn\'t about the ice cream.',
     date: 'February 16, 2026',
     tags: ['self worth', 'choosing yourself', 'young adulthood', 'letting go'],
-    cover: 'https://substack-post-media.s3.amazonaws.com/public/images/5f183122-7f37-40d2-8498-8870b0aab8e3_736x920.jpeg',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com/p/mint-chocolate-and-broken-promises',
     body: `<p><em>Hey, I'm sitting in a cafe sipping coffee, books stacked on the table, while I let the pasta cool down. I'm wearing that pink top, which I wanted to wear to get ice cream with him today, but he completely forgot about it, like he never intended to make it happen. I didn't remind him of the date because part of me already knew the ending. I thought if I went out by myself, I would feel better, but here I am, completely unaware of the present, lost in the memories of him and us, trying my best to be in the moment.</em></p>
 <p><em>I am mad at him, I am mad at myself for letting him treat me like this, like I'm asking him too much when I'm settling for breadcrumbs in reality.</em></p>
@@ -365,7 +365,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'A Conversation That Shifted My Trajectory',
     date: 'February 14, 2026',
     tags: ['rebuilding', 'career growth', 'self development', 'career reset'],
-    cover: 'https://substack-post-media.s3.amazonaws.com/public/images/219974d8-d304-4ec1-819c-1997ca13a2af_400x349.jpeg',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com/p/relearning-2026-my-second-engineering',
     body: `<p>Today was a very chill day at work. There were barely 10 people on my floor since it's a Saturday, and also Valentine's day the office is deserted. After lunch, I was just reading a book and relaxing. My manager came up to me asking if I was occupied, so I thought he would have wanted to talk about the project progress or any new requirements, but he asked me about the subject-wise notes we get in university, and I was a little surprised when he wanted the notes if I had any on my laptop.</p>
 <p>During the convo, he told me that he wants to learn again, everything related to tech from scratch, and he wanted to train his brain to forget what he learnt and start from zero. He is more into project management and doesn't deal with tech a lot. So, I asked him if he is planning to switch roles or jobs, and he was like no nothing of that sort. I just wanna learn and relearn everything that I already know. The eagerness in his eyes to learn was something inspiring.</p>
@@ -385,7 +385,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'On missing someone who never really chose you.',
     date: 'February 13, 2026',
     tags: ['love and loss', 'letting go', 'self worth'],
-    cover: 'https://substack-post-media.s3.amazonaws.com/public/images/f37cc82f-b411-4c83-b625-fc64788e9756_736x404.jpeg',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com/p/days-i-miss-you-a-lil-more-than-the',
     body: `<p><em>It's just one of those days where I miss u a little more than usual. I open your snaps that I haven't opened in a long time I see pics of you in your handsome outfit checks, I see you wearing the shirts I love, I see you smiling the same, I see you having the same coffee that I love what hurts me the most is I can just see you like this but I can't even replay your snap, I can't save it or reply something sweet or flirty to your snaps. All I can do is watch you live your life as if nothing happened, like u didn't feel a single drop of the ocean I felt. I would've just been another girl in your DMs whom u could impress easily.</em></p>
 <p><em>I should've trusted my gut the day u opened up your emotions slowly to me, the day you let me stand on your boundaries without a constant reminder in my head to step back. I could see you becoming close to me, and my gut warned me that it might be the last time we meet, and it came true. I tried manipulating my gut into thinking that u were finally feeling something, getting closer to me, and you wanted me like I wanted you. But apparently, I was the only one who felt it.</em></p>
@@ -404,7 +404,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'A letter to the one who walked away, or all the questions that couldn\'t be asked.',
     date: 'February 6, 2026',
     tags: ['love and loss', 'identity', 'finding her'],
-    cover: 'https://substack-post-media.s3.amazonaws.com/public/images/419ef9c4-2f1c-4c9f-8c0a-b8465ade6118_736x508.jpeg',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com/p/the-girl-you-left-behind',
     body: `<p>What about everything that girl felt when you left her for your convenience?</p>
 <p>What about everything she had to go through to be with you?</p>
@@ -428,7 +428,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'A lot of people who know me constantly ask this question. It\'s time to share the answer.',
     date: 'February 10, 2026',
     tags: ['identity', 'freedom', 'first love', 'self discovery', 'home'],
-    cover: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Charminar_Hyderabad.jpg/1200px-Charminar_Hyderabad.jpg',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com/p/what-even-is-in-hyderabad',
     body: `<p>A lot of people who know me constantly ask this question: "What even is in Hyderabad? Why are you so obsessed with it?" I've heard this question a couple of times, but it's time to share the answer with y'all.</p>
 <p>I was in Hyderabad for a year when I was 17, which feels like a decade ago lol. 17 was such a tender age. I was told I was too mature at 17, and I thought that it was a good thing. I was there because I took a drop year and wanted to prepare for NEET. I moved away from home, stayed in a PG, and got an entirely fresh perspective on life. I didn't know who I was before Hyderabad happened to me. I was a mess. Now I can't imagine who I would've been if Hyderabad hadn't happened to me.</p>
@@ -449,7 +449,7 @@ when you only wanted a few moments with me.</p>`
     subtitle: 'Too young to die, too tired to live.',
     date: 'June 19, 2025',
     tags: ['exhaustion', 'identity', 'survival'],
-    cover: 'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>I always wondered<br>
 how it felt—to be buried,<br>
@@ -478,7 +478,7 @@ that creeps beneath glamour.</p>`
     subtitle: 'Moments that borrow your breath before returning you changed.',
     date: 'June 15, 2025',
     tags: ['time', 'memory', 'presence'],
-    cover: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Moments so simple,<br>
 yet they pull you back.<br>
@@ -499,7 +499,7 @@ changed.</p>`
     subtitle: 'No disclaimer for becoming this tired kind of grown.',
     date: 'July 27, 2025',
     tags: ['young adulthood', 'growing up', 'identity'],
-    cover: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Woke up drowning<br>
 in feelings I never invited.<br>
@@ -522,7 +522,7 @@ this tired kind of grown.</p>`
     subtitle: 'She realizes, she\'s in love.',
     date: 'April 22, 2025',
     tags: ['love', 'friendship', 'desire'],
-    cover: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>In the middle of the movie,<br>
 an urge rose up from the depth of her heart<br>
@@ -546,7 +546,7 @@ she realizes, she's in LOVE.</p>`
     subtitle: 'Dancing in the shadows of maybe.',
     date: 'February 17, 2025',
     tags: ['love', 'longing', 'heartbreak'],
-    cover: 'https://images.unsplash.com/photo-1532978379173-523e16f371f9?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>How could you smile,<br>
 lips curved in fragile grace,<br>
@@ -568,7 +568,7 @@ dancing in the shadows of maybe.</p>`
     subtitle: 'Meeting once, then breaking the heart.',
     date: 'January 30, 2025',
     tags: ['love', 'religion', 'letting go'],
-    cover: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Why don't we ever speak of tomorrow?<br>
 The tomorrow that never exists,<br>
@@ -589,7 +589,7 @@ religion whispers, "No other way."</p>`
     subtitle: 'I found myself, completely there.',
     date: 'January 23, 2025',
     tags: ['love', 'spirituality', 'presence'],
-    cover: 'https://images.unsplash.com/photo-1532978379173-523e16f371f9?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>I thought the bells were just a silly tale,<br>
 in telugu films when lovers unite.<br>
@@ -611,7 +611,7 @@ I found myself, completely there.</p>`
     subtitle: 'Love unspoken, yet deeply bestowed.',
     date: 'December 29, 2024',
     tags: ['memory', 'heartbreak', 'love and loss'],
-    cover: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>I scrubbed my skin, erased the trace,<br>
 washed my clothes, your scent to replace.<br>
@@ -629,7 +629,7 @@ love unspoken, yet deeply bestowed.</p>`
     subtitle: 'How beautiful this string could be.',
     date: 'January 27, 2025',
     tags: ['love', 'connection', 'hope'],
-    cover: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>How beautiful this string could be,<br>
 if egos fall, setting us free.<br>
@@ -647,7 +647,7 @@ how beautiful this string could be.</p>`
     subtitle: 'It\'s always been you.',
     date: 'October 6, 2024',
     tags: ['love', 'night', 'desire'],
-    cover: 'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>I initially thought it was the alcohol that gave me the rush,<br>
 but I was mistaken.<br>
@@ -668,7 +668,7 @@ it's always been you.</p>`
     subtitle: 'A new that\'s not you, again.',
     date: 'June 10, 2025',
     tags: ['letting go', 'heartbreak', 'moving on'],
-    cover: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>A new face,<br>
 A new phase,<br>
@@ -689,7 +689,7 @@ AGAIN.</p>`
     subtitle: 'The ocean led me back to stand alone.',
     date: 'February 7, 2025',
     tags: ['solitude', 'healing', 'nature'],
-    cover: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>A thousand voices echoed in my mind,<br>
 a chorus of shadows, restless and loud,<br>
@@ -711,7 +711,7 @@ and led me back to stand alone.</p>`
     subtitle: 'I\'ve known the tides, but never the storm.',
     date: 'February 10, 2025',
     tags: ['love', 'longing', 'growing up'],
-    cover: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>Now that I'm older,<br>
 and maybe a little wiser,<br>
@@ -739,7 +739,7 @@ but never the storm.</p>`
     subtitle: 'Forgetting it feels like a gentle flame.',
     date: 'April 14, 2025',
     tags: ['memory', 'heartbreak', 'letting go'],
-    cover: 'https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=848&q=80',
+    cover: '',
     substackUrl: 'https://chndnaaaaaaa.substack.com',
     body: `<p>I've learned to lie about love<br>
 to say I've forgotten its touch, its tune,<br>
@@ -854,7 +854,6 @@ function openArticle(slug) {
   substackLink.href = post.substackUrl;
 
   modalBody.innerHTML = `
-    ${post.cover ? `<img class="article-cover" src="${post.cover}" alt="${post.title}" />` : ''}
     <span class="article-category-badge">${post.category.replace('-', ' ')}</span>
     <h1 class="article-title">${post.title}</h1>
     <p class="article-subtitle">${post.subtitle}</p>
@@ -1061,5 +1060,7 @@ if (backToTop) {
     }
   });
 })();
+
+
 
 

@@ -427,9 +427,13 @@ nav {
   background: linear-gradient(to bottom, transparent 40%, rgba(13,12,11,0.6));
 }
 .no-img {
-  background: linear-gradient(135deg, #ede7da 0%, #e4ddd0 100%);
+  background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
   display: flex; align-items: center; justify-content: center;
 }
+.post-card[data-category="poems"] .no-img       { background: linear-gradient(135deg, #e8e0f0, #d8cce8); }
+.post-card[data-category="articles"] .no-img    { background: linear-gradient(135deg, #f5e8d8, #edd8c0); }
+.post-card[data-category="book-reviews"] .no-img { background: linear-gradient(135deg, #d8ede8, #c4e0d8); }
+.post-card[data-category="rough-notes"] .no-img  { background: linear-gradient(135deg, #f0ecd8, #e8e0c4); }
 .post-img-text {
   font-family: var(--serif);
   font-size: 3rem;
