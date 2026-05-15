@@ -1011,6 +1011,12 @@ window.addEventListener('scroll', () => {
   if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
 });
 
+// ─── Surprise Me ──────────────────────────────────────────────────────────────
+document.getElementById('surprise-btn').addEventListener('click', () => {
+  const random = POSTS[Math.floor(Math.random() * POSTS.length)];
+  openArticle(random.slug);
+});
+
 // ─── Back to Top ───────────────────────────────────────────────────────────────
 const backToTop = document.getElementById('back-to-top');
 if (backToTop) {

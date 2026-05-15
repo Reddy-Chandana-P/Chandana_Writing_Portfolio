@@ -931,6 +931,8 @@ footer {
 }
 .filter-liked { border-color: rgba(224,90,122,0.4); color: #e05a7a; }
 .filter-liked.active { background: #e05a7a; border-color: #e05a7a; color: #fff; }
+.filter-surprise { border-color: rgba(122,90,180,0.4); color: #7a5ab4; }
+.filter-surprise:hover { background: #7a5ab4; border-color: #7a5ab4; color: #fff; }
 @media (max-width: 1024px) {
   .posts-grid { grid-template-columns: repeat(2, 1fr); }
   .hero { grid-template-columns: 1fr; }
