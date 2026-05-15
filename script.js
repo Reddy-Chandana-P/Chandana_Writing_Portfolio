@@ -973,12 +973,17 @@ renderPosts();
 // ─── Custom Cursor ─────────────────────────────────────────────────────────────
 const cursor = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
-let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
+let mouseX = -100, mouseY = -100, followerX = -100, followerY = -100;
+
+cursor.style.opacity = '0';
+follower.style.opacity = '0';
 
 document.addEventListener('mousemove', e => {
   mouseX = e.clientX; mouseY = e.clientY;
   cursor.style.left = mouseX + 'px';
   cursor.style.top = mouseY + 'px';
+  cursor.style.opacity = '1';
+  follower.style.opacity = '1';
 });
 (function animateFollower() {
   followerX += (mouseX - followerX) * 0.12;
