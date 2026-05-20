@@ -970,29 +970,6 @@ renderPosts();
   if (el) el.innerHTML = parts.join('<span class="count-dot">·</span>');
 })();
 
-// ─── Custom Cursor ─────────────────────────────────────────────────────────────
-const cursor = document.querySelector('.cursor');
-const follower = document.querySelector('.cursor-follower');
-let mouseX = -100, mouseY = -100, followerX = -100, followerY = -100;
-
-cursor.style.opacity = '0';
-follower.style.opacity = '0';
-
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX; mouseY = e.clientY;
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
-  cursor.style.opacity = '1';
-  follower.style.opacity = '1';
-});
-(function animateFollower() {
-  followerX += (mouseX - followerX) * 0.12;
-  followerY += (mouseY - followerY) * 0.12;
-  follower.style.left = followerX + 'px';
-  follower.style.top = followerY + 'px';
-  requestAnimationFrame(animateFollower);
-})();
-
 // ─── Nav on Scroll ─────────────────────────────────────────────────────────────
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
