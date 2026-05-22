@@ -1006,40 +1006,36 @@ if (backToTop) {
 }
 
 // ─── Theme Picker ──────────────────────────────────────────────────────────────
-(function() {
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme === 'warm' ? '' : theme);
+  localStorage.setItem('theme', theme);
+  document.querySelectorAll('.swatch').forEach(s => {
+    s.style.outline = s.dataset.theme === theme ? '2px solid #888' : 'none';
+    s.style.outlineOffset = '2px';
+  });
+}
+
+function toggleThemePanel() {
+  const panel = document.getElementById('theme-panel');
+  panel.classList.toggle('open');
+}
+
+function pickTheme(theme) {
+  applyTheme(theme);
+  document.getElementById('theme-panel').classList.remove('open');
+}
+
+// close on outside click
+document.addEventListener('click', function(e) {
+  const panel = document.getElementById('theme-panel');
   const toggle = document.getElementById('theme-toggle');
-  const panel  = document.getElementById('theme-panel');
-  if (!toggle || !panel) return;
-
-  const swatchBtns = panel.querySelectorAll('.swatch');
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme === 'warm' ? '' : theme);
-    localStorage.setItem('theme', theme);
-    swatchBtns.forEach(s => s.classList.toggle('active', s.dataset.theme === theme));
+  if (panel && toggle && !panel.contains(e.target) && !toggle.contains(e.target)) {
+    panel.classList.remove('open');
   }
+});
 
-  applyTheme(localStorage.getItem('theme') || 'warm');
-
-  toggle.addEventListener('click', function(e) {
-    e.stopPropagation();
-    panel.classList.toggle('open');
-  });
-
-  swatchBtns.forEach(function(s) {
-    s.addEventListener('click', function(e) {
-      e.stopPropagation();
-      applyTheme(s.dataset.theme);
-      panel.classList.remove('open');
-    });
-  });
-
-  document.addEventListener('click', function(e) {
-    if (!panel.contains(e.target) && !toggle.contains(e.target)) {
-      panel.classList.remove('open');
-    }
-  });
-})();
+// load saved theme
+applyTheme(localStorage.getItem('theme') || 'warm');
 
 
 
