@@ -937,10 +937,12 @@ bookSearchInput.addEventListener('input', () => {
 
 // ─── Scroll Progress ───────────────────────────────────────────────────────────
 const scrollProgress = document.getElementById('scroll-progress');
-window.addEventListener('scroll', () => {
-  const total = document.documentElement.scrollHeight - window.innerHeight;
-  scrollProgress.style.width = (window.scrollY / total * 100) + '%';
-});
+if (scrollProgress) {
+  window.addEventListener('scroll', () => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress.style.width = (window.scrollY / total * 100) + '%';
+  });
+}
 
 // ─── Scroll Reveal ─────────────────────────────────────────────────────────────
 const observer = new IntersectionObserver(entries => {
@@ -991,10 +993,13 @@ window.addEventListener('scroll', () => {
 });
 
 // ─── Surprise Me ──────────────────────────────────────────────────────────────
-document.getElementById('surprise-btn').addEventListener('click', () => {
-  const random = POSTS[Math.floor(Math.random() * POSTS.length)];
-  openArticle(random.slug);
-});
+const surpriseBtn = document.getElementById('surprise-btn');
+if (surpriseBtn) {
+  surpriseBtn.addEventListener('click', () => {
+    const random = POSTS[Math.floor(Math.random() * POSTS.length)];
+    openArticle(random.slug);
+  });
+}
 
 // ─── Back to Top ───────────────────────────────────────────────────────────────
 const backToTop = document.getElementById('back-to-top');
