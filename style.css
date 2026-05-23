@@ -14,8 +14,17 @@
   --radius: 4px;
 }
 
+[data-theme="cherry"] {
+  --bg: #1a0508;
+  --bg2: #2a0a10;
+  --bg3: #200810;
+  --accent: #e8304a;
+  --accent2: #c0152a;
+  --text: #f5e8ea;
+  --text-muted: #c49098;
+  --text-dim: #5a2030;
+}
 /* ── Themes ── */
-[data-theme="dark"] {
   --bg: #1a1714;
   --bg2: #231f1b;
   --bg3: #201d19;
