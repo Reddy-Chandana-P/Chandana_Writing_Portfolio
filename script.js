@@ -1010,22 +1010,23 @@ function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme === 'warm' ? '' : theme);
   localStorage.setItem('theme', theme);
   document.querySelectorAll('.swatch').forEach(s => {
-    s.style.outline = s.dataset.theme === theme ? '2px solid #888' : 'none';
-    s.style.outlineOffset = '2px';
+    s.classList.toggle('active', s.dataset.theme === theme);
   });
 }
 
-function toggleThemePanel() {
-  const panel = document.getElementById('theme-panel');
-  panel.classList.toggle('open');
-}
+document.getElementById('theme-toggle').addEventListener('click', function(e) {
+  e.stopPropagation();
+  document.getElementById('theme-panel').classList.toggle('open');
+});
 
-function pickTheme(theme) {
-  applyTheme(theme);
-  document.getElementById('theme-panel').classList.remove('open');
-}
+document.querySelectorAll('.swatch').forEach(function(s) {
+  s.addEventListener('click', function(e) {
+    e.stopPropagation();
+    applyTheme(s.dataset.theme);
+    document.getElementById('theme-panel').classList.remove('open');
+  });
+});
 
-// close on outside click
 document.addEventListener('click', function(e) {
   const panel = document.getElementById('theme-panel');
   const toggle = document.getElementById('theme-toggle');
@@ -1034,7 +1035,6 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// load saved theme
 applyTheme(localStorage.getItem('theme') || 'warm');
 
 
