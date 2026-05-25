@@ -279,6 +279,7 @@ when you only wanted a few moments with me.</p>`
   {
     slug: 'oh-death-come-again-another-day',
     category: 'articles',
+    title: 'Oh Death, Come Again Another Day',
     subtitle: 'about an old friend who comes n goes.',
     date: 'March 5, 2026',
     tags: ['death', 'young adulthood', 'rebirth', 'life transitions'],
@@ -784,7 +785,7 @@ function renderPosts(filter = 'all') {
   grid.innerHTML = filtered.map((post, i) => `
     <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
       <div class="post-img no-img">
-        <div class="post-img-text">${post.title.slice(0,2).toUpperCase()}</div>
+        <div class="post-img-text">${(post.title || "??").slice(0,2).toUpperCase()}</div>
       </div>
       <div class="post-body">
         <div class="post-tags">${post.tags.slice(0,3).map(t => `<span class="${categoryColor(post.category)}">${t}</span>`).join('')}</div>
@@ -906,7 +907,7 @@ bookSearchInput.addEventListener('input', () => {
   grid.innerHTML = filtered.map((post, i) => `
     <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
       <div class="post-img no-img">
-        <div class="post-img-text">${post.title.slice(0,2).toUpperCase()}</div>
+        <div class="post-img-text">${(post.title || "??").slice(0,2).toUpperCase()}</div>
       </div>
       <div class="post-body">
         <div class="post-tags">${post.tags.slice(0,3).map(t => `<span class="${categoryColor(post.category)}">${t}</span>`).join('')}</div>
@@ -1041,6 +1042,7 @@ document.addEventListener('click', function(e) {
 });
 
 applyTheme(localStorage.getItem('theme') || 'warm');
+
 
 
 
