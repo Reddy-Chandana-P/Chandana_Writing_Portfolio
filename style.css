@@ -14,15 +14,15 @@
   --radius: 4px;
 }
 
-[data-theme="cherry"] {
-  --bg: #fdf0f0;
-  --bg2: #fad8d8;
-  --bg3: #fff5f5;
-  --accent: #c0152a;
-  --accent2: #96101f;
-  --text: #2a0a0e;
-  --text-muted: #7a2030;
-  --text-dim: #c48090;
+[data-theme="darkpink"] {
+  --bg: #fce8f3;
+  --bg2: #f5d0e8;
+  --bg3: #fef2f9;
+  --accent: #d63384;
+  --accent2: #b0246c;
+  --text: #2a0a1e;
+  --text-muted: #7a2858;
+  --text-dim: #c490b0;
 }
 /* ── Themes ── */
   --bg: #1a1714;
