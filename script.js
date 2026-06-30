@@ -864,9 +864,7 @@ function openArticle(slug) {
     </div>
     <div class="article-tags">${post.tags.map(t => `<span>${t}</span>`).join('')}</div>
     <div class="article-body${post.category === 'poems' ? ' poem-body' : ''}">${post.body}</div>
-    ${post.category === 'poems' ? `
-    <button class="copy-poem-btn" id="copy-poem-btn">Copy poem</button>
-    ` : ''}
+    <button class="copy-poem-btn" id="copy-poem-btn">${post.category === 'poems' ? 'Copy poem' : 'Copy text'}</button>
     <div class="article-footer">
       <p>Enjoyed this? Subscribe for more on Substack.</p>
       <a href="https://chndnaaaaaaa.substack.com" target="_blank">Subscribe ↗</a>
@@ -884,7 +882,8 @@ function openArticle(slug) {
       const text = `${post.title}\n\n` + document.querySelector('.article-body').innerText;
       navigator.clipboard.writeText(text).then(() => {
         copyBtn.textContent = 'Copied ✓';
-        setTimeout(() => copyBtn.textContent = 'Copy poem', 2000);
+        const label = post.category === 'poems' ? 'Copy poem' : 'Copy text';
+        setTimeout(() => copyBtn.textContent = label, 2000);
       });
     });
   }
