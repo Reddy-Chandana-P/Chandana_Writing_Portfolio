@@ -25,6 +25,7 @@
   --text-dim: #c490b0;
 }
 /* ── Themes ── */
+[data-theme="dark"] {
   --bg: #1a1714;
   --bg2: #231f1b;
   --bg3: #201d19;
@@ -772,6 +773,23 @@ footer {
 .article-body .pencraft,
 .article-body .subscription-widget-wrap-editor,
 .article-body .button-wrapper { display: none !important; }
+
+/* Copy poem button */
+.copy-poem-btn {
+  display: block;
+  margin: 0 auto 2rem;
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--text-dim);
+  color: var(--text-muted);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.copy-poem-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 .article-footer {
   margin-top: 4rem;

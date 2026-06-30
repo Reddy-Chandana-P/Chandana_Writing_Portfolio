@@ -864,6 +864,9 @@ function openArticle(slug) {
     </div>
     <div class="article-tags">${post.tags.map(t => `<span>${t}</span>`).join('')}</div>
     <div class="article-body${post.category === 'poems' ? ' poem-body' : ''}">${post.body}</div>
+    ${post.category === 'poems' ? `
+    <button class="copy-poem-btn" id="copy-poem-btn">Copy poem</button>
+    ` : ''}
     <div class="article-footer">
       <p>Enjoyed this? Subscribe for more on Substack.</p>
       <a href="https://chndnaaaaaaa.substack.com" target="_blank">Subscribe ↗</a>
@@ -873,6 +876,18 @@ function openArticle(slug) {
   overlay.classList.add('open');
   overlay.scrollTop = 0;
   document.body.style.overflow = 'hidden';
+
+  // Copy button for poems
+  const copyBtn = document.getElementById('copy-poem-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const text = `${post.title}\n\n` + document.querySelector('.article-body').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        copyBtn.textContent = 'Copied ✓';
+        setTimeout(() => copyBtn.textContent = 'Copy poem', 2000);
+      });
+    });
+  }
 }
 
 function closeArticle() {
