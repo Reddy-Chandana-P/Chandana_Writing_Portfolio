@@ -569,6 +569,34 @@ blockquote cite {
 }
 .about-btn:hover { background: var(--accent); color: #fff; }
 
+/* Currently reading */
+.currently-reading {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--bg2);
+  border-radius: 8px;
+  background: var(--bg3);
+}
+.currently-reading-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.currently-reading-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--text);
+  font-style: italic;
+}
+.currently-reading-author {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
 /* Footer */
 footer {
   border-top: 1px solid var(--bg2);
