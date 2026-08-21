@@ -806,15 +806,7 @@ function renderPosts(filter = 'all', limit = null) {
         </div>
       </div>
     </article>
-  `).join('') + (
-    !showAll ? `
-    <article class="post-card cta-card reveal view-all-card" data-index="${visible.length}">
-      <div class="cta-card-inner" style="cursor:pointer" onclick="renderPosts('${filter}')">
-        <span class="cta-big">↓</span>
-        <h3>View all ${filtered.length} posts</h3>
-        <p>See everything in this category.</p>
-      </div>
-    </article>` : `
+  `).join('') + `
     <article class="post-card cta-card reveal" data-index="${visible.length}">
       <a href="https://chndnaaaaaaa.substack.com/archive" target="_blank">
         <div class="cta-card-inner">
@@ -823,7 +815,15 @@ function renderPosts(filter = 'all', limit = null) {
           <p>More essays, notes, and fragments from the archive.</p>
         </div>
       </a>
-    </article>`);
+    </article>`;
+
+  const viewAllBtn = document.getElementById('view-all-btn');
+  if (!showAll) {
+    viewAllBtn.style.display = 'block';
+    viewAllBtn.onclick = () => { renderPosts(filter); viewAllBtn.style.display = 'none'; };
+  } else {
+    viewAllBtn.style.display = 'none';
+  }
 
   // Re-observe new cards
   grid.querySelectorAll('.post-card[data-slug]').forEach(card => {

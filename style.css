@@ -934,6 +934,24 @@ footer {
   100% { transform: scale(1); }
 }
 
+.view-all-wrap {
+  text-align: center;
+  margin-top: 2rem;
+}
+.view-all-btn {
+  background: transparent;
+  border: 1px solid var(--text-dim);
+  color: var(--text-muted);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  padding: 0.55rem 1.75rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.view-all-btn:hover { border-color: var(--accent); color: var(--accent); }
+
 /* Book search bar */
 .book-search-bar {
   display: none;
