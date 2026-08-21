@@ -778,11 +778,14 @@ function categoryColor(cat) {
   return '';
 }
 
-function renderPosts(filter = 'all') {
+function renderPosts(filter = 'all', limit = null) {
   const grid = document.getElementById('posts-grid');
-  const filtered = filter === 'all' ? POSTS : filter === 'liked' ? POSTS.filter(p => isLiked(p.slug)) : POSTS.filter(p => p.category === filter);
+  let filtered = filter === 'all' ? POSTS : filter === 'liked' ? POSTS.filter(p => isLiked(p.slug)) : POSTS.filter(p => p.category === filter);
 
-  grid.innerHTML = filtered.map((post, i) => `
+  const showAll = limit === null || filtered.length <= limit;
+  const visible = showAll ? filtered : filtered.slice(0, limit);
+
+  grid.innerHTML = visible.map((post, i) => `
     <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
       <div class="post-img no-img">
         <div class="post-img-text">${(post.title || "??").slice(0,2).toUpperCase()}</div>
@@ -803,8 +806,16 @@ function renderPosts(filter = 'all') {
         </div>
       </div>
     </article>
-  `).join('') + `
-    <article class="post-card cta-card reveal" data-index="${filtered.length}">
+  `).join('') + (
+    !showAll ? `
+    <article class="post-card cta-card reveal view-all-card" data-index="${visible.length}">
+      <div class="cta-card-inner" style="cursor:pointer" onclick="renderPosts('${filter}')">
+        <span class="cta-big">↓</span>
+        <h3>View all ${filtered.length} posts</h3>
+        <p>See everything in this category.</p>
+      </div>
+    </article>` : `
+    <article class="post-card cta-card reveal" data-index="${visible.length}">
       <a href="https://chndnaaaaaaa.substack.com/archive" target="_blank">
         <div class="cta-card-inner">
           <span class="cta-big">↗</span>
@@ -812,7 +823,7 @@ function renderPosts(filter = 'all') {
           <p>More essays, notes, and fragments from the archive.</p>
         </div>
       </a>
-    </article>`;
+    </article>`);
 
   // Re-observe new cards
   grid.querySelectorAll('.post-card[data-slug]').forEach(card => {
@@ -835,7 +846,7 @@ function renderPosts(filter = 'all') {
       btn.textContent = liked ? '♥' : '♡';
       // if currently viewing liked filter, re-render
       if (document.querySelector('.filter-btn.active')?.dataset.filter === 'liked') {
-        renderPosts('liked');
+        renderPosts('liked', null);
       }
     });
   });
@@ -909,7 +920,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     const filter = btn.dataset.filter;
     bookSearchBar.style.display = filter === 'book-reviews' ? 'block' : 'none';
     if (filter !== 'book-reviews') bookSearchInput.value = '';
-    renderPosts(filter);
+    renderPosts(filter, filter === 'all' ? 12 : null);
   });
 });
 
@@ -973,7 +984,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Initial render
-renderPosts();
+renderPosts('all', 12);
 
 // ─── Post Count Badge ──────────────────────────────────────────────────────────
 (function() {
