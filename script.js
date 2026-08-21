@@ -806,16 +806,7 @@ function renderPosts(filter = 'all', limit = null) {
         </div>
       </div>
     </article>
-  `).join('') + `
-    <article class="post-card cta-card reveal" data-index="${visible.length}">
-      <a href="https://chndnaaaaaaa.substack.com/archive" target="_blank">
-        <div class="cta-card-inner">
-          <span class="cta-big">↗</span>
-          <h3>See everything on Substack</h3>
-          <p>More essays, notes, and fragments from the archive.</p>
-        </div>
-      </a>
-    </article>`;
+  `).join('');
 
   const viewAllBtn = document.getElementById('view-all-btn');
   if (!showAll) {
