@@ -914,7 +914,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     const filter = btn.dataset.filter;
     bookSearchBar.style.display = filter === 'book-reviews' ? 'block' : 'none';
     if (filter !== 'book-reviews') bookSearchInput.value = '';
-    renderPosts(filter, filter === 'all' ? 6 : null);
+    renderPosts(filter, filter === 'all' ? 5 : null);
   });
 });
 
@@ -978,7 +978,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Initial render
-renderPosts('all', 6);
+renderPosts('all', 5);
 
 // ─── Post Count Badge ──────────────────────────────────────────────────────────
 (function() {
@@ -1061,6 +1061,7 @@ document.addEventListener('click', function(e) {
 });
 
 applyTheme(localStorage.getItem('theme') || 'warm');
+
 
 
 
