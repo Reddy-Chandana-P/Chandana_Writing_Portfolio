@@ -785,8 +785,11 @@ function renderPosts(filter = 'all', limit = null) {
   const showAll = limit === null || filtered.length <= limit;
   const visible = showAll ? filtered : filtered.slice(0, limit);
 
-  grid.innerHTML = visible.map((post, i) => `
-    <article class="post-card reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
+  grid.innerHTML = visible.map((post, i) => {
+    const isFeatured = filter === 'all' && i === 2;
+    const cardClass = isFeatured ? 'featured' : 'side';
+    return `
+    <article class="post-card ${cardClass} reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
       <div class="post-img no-img">
         <div class="post-img-text">${(post.title || "??").slice(0,2).toUpperCase()}</div>
       </div>
@@ -805,8 +808,8 @@ function renderPosts(filter = 'all', limit = null) {
           </button>
         </div>
       </div>
-    </article>
-  `).join('');
+    </article>`;
+  }).join('');
 
   const viewAllBtn = document.getElementById('view-all-btn');
   if (!showAll) {
@@ -911,7 +914,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     const filter = btn.dataset.filter;
     bookSearchBar.style.display = filter === 'book-reviews' ? 'block' : 'none';
     if (filter !== 'book-reviews') bookSearchInput.value = '';
-    renderPosts(filter, filter === 'all' ? 12 : null);
+    renderPosts(filter, filter === 'all' ? 6 : null);
   });
 });
 
@@ -975,7 +978,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Initial render
-renderPosts('all', 12);
+renderPosts('all', 6);
 
 // ─── Post Count Badge ──────────────────────────────────────────────────────────
 (function() {
