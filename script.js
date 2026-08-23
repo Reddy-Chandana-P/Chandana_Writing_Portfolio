@@ -793,7 +793,7 @@ function renderPosts(filter = 'all', limit = null) {
       <div class="post-img no-img">
         <div class="post-img-text">${(post.title || "??").slice(0,2).toUpperCase()}</div>
       </div>
-      ${isFeatured && post.category === 'poems' ? `<div class="post-poem-preview">${post.body.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).slice(0, 30).join(' ')}…</div>` : ''}
+      ${isFeatured && post.category === 'poems' ? `<div class="post-poem-preview">${post.body.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).slice(0, 80).join(' ')}…</div>` : ''}
       <div class="post-body">
         <div class="post-tags">${post.tags.slice(0,3).map(t => `<span class="${categoryColor(post.category)}">${t}</span>`).join('')}</div>
         <h3>${post.title}</h3>
