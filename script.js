@@ -786,7 +786,7 @@ function renderPosts(filter = 'all', limit = null) {
   const visible = showAll ? filtered : filtered.slice(0, limit);
 
   grid.innerHTML = visible.map((post, i) => {
-    const isFeatured = filter === 'all' && i === 2;
+    const isFeatured = filter === 'all' && post.slug === 'to-the-girls';
     const cardClass = isFeatured ? 'featured' : 'side';
     return `
     <article class="post-card ${cardClass} reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
