@@ -786,7 +786,7 @@ function renderPosts(filter = 'all', limit = null) {
   const visible = showAll ? filtered : filtered.slice(0, limit);
 
   grid.innerHTML = visible.map((post, i) => {
-    const isFeatured = filter === 'all' && post.slug === 'to-the-girls';
+    const isFeatured = i === 2;
     const cardClass = isFeatured ? 'featured' : 'side';
     return `
     <article class="post-card ${cardClass} reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
@@ -915,7 +915,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     const filter = btn.dataset.filter;
     bookSearchBar.style.display = filter === 'book-reviews' ? 'block' : 'none';
     if (filter !== 'book-reviews') bookSearchInput.value = '';
-    renderPosts(filter, filter === 'all' ? 5 : null);
+    renderPosts(filter, 5);
   });
 });
 
