@@ -780,13 +780,16 @@ function categoryColor(cat) {
 
 function renderPosts(filter = 'all', limit = null) {
   const grid = document.getElementById('posts-grid');
+  // Switch grid layout
+  grid.classList.toggle('grid-magazine', filter === 'all');
+  grid.classList.toggle('grid-blocks', filter !== 'all');
   let filtered = filter === 'all' ? POSTS : filter === 'liked' ? POSTS.filter(p => isLiked(p.slug)) : POSTS.filter(p => p.category === filter);
 
   const showAll = limit === null || filtered.length <= limit;
   const visible = showAll ? filtered : filtered.slice(0, limit);
 
   grid.innerHTML = visible.map((post, i) => {
-    const isFeatured = i === 2;
+    const isFeatured = filter === 'all' && i === 2;
     const cardClass = isFeatured ? 'featured' : 'side';
     return `
     <article class="post-card ${cardClass} reveal" data-index="${i}" data-slug="${post.slug}" data-category="${post.category}">
@@ -915,7 +918,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     const filter = btn.dataset.filter;
     bookSearchBar.style.display = filter === 'book-reviews' ? 'block' : 'none';
     if (filter !== 'book-reviews') bookSearchInput.value = '';
-    renderPosts(filter, 5);
+    renderPosts(filter, filter === 'all' ? 5 : null);
   });
 });
 
